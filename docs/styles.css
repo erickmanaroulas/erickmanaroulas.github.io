@@ -34,14 +34,14 @@ html {
 }
 
 /* Compact Only */
-@media (max-width: 800) {
+@media (max-width: 800x) {
     .headline {
         width: 100%;
     }
 }
 
 /* Detailed Only */
-@media(min-width: 800) {
+@media(min-width: 800px) {
     .headline {
         margin-left: 25%;
         width: 50%;
