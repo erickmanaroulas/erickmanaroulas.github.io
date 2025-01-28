@@ -4,6 +4,9 @@
 :root {
     --primary-color: #2C3639;
     --secondary-color: #DCD7C9;
+    --font-size: 1.2rem;
+    --max-width: 80%;
+    --nav-direction: row;
 }
 
 /* 
@@ -27,8 +30,7 @@ body {
       "wdth" 100;
     display: flex;
     flex-direction: column;
-    width: 95%;
-    margin: auto;
+    gap: 8px;
 }
 
 .roundedImage {
@@ -42,8 +44,14 @@ body {
     background-color: #DCD7C9;
     padding: 20px;
     border-radius: 12px;
-    margin: auto;
-    height: 100%;
+}
+
+.imageCard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
 /* 
@@ -51,30 +59,36 @@ body {
 */
 .navContainer {
     background-color: var(--nav-color);
-    font-size: 1.2rem;
-    height: 70px;
+    font-size: var(--font-size);
 }
 
 .navbar {
     display:flex;
     justify-content: center;
-    height: 100%;
-    width: 80%;
+    align-items: center;
+    align-content: center;
+    width: var(--max-width);
     margin: auto;
-    font-size: 1.2rem;
+    font-size: var(--font-size);
+    flex-direction: var(--nav-direction);
 }
 
 .navContainer .navbar {
     justify-content: space-between;
 }
 
+.navContainer hr {
+    margin: 0;
+}
+
 .navbar ul {
     display: flex;
+    gap: 10px;
+    padding: 0px;
 }
 
 .navbar ul li {
     list-style-type: none;
-    padding: 10px;
 }
 
 .navbar a {
@@ -90,31 +104,9 @@ body {
 }
 
 @media (max-width: 800px) {
-    .navContainer {
-        height: 100%;
-    }
-
-    .navContainer .navbar {
-        flex-direction: column;
-    }
-}
-
-/* 
-    // MARK: Responsiveness 
-*/
-/* Compact Only */
-@media (max-width: 800x) {
-    .headline {
-        width: 50%;
-        justify-content: center;
-        margin: auto;
-    }
-}
-
-/* Detailed Only */
-@media(min-width: 800px) {
-    .headline {
-        margin-left: 25%;
-        width: 50%;
+    :root {
+        --font-size: 1rem;
+        --max-width: 100%;
+        --nav-direction: column;
     }
 }
