@@ -129,6 +129,6 @@ section > div {
 */
 @media (max-width: 800px) {
     :root {
-        --nav-direction: column;
+        --flex-direction: column;
     }
 }
