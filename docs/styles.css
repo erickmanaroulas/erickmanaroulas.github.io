@@ -4,7 +4,6 @@
 :root {
     --primary-color: #2C3639;
     --secondary-color: #DCD7C9;
-    --font-size: 1.2rem;
     --max-width: 80%;
     --nav-direction: row;
 }
@@ -12,11 +11,11 @@
 /* 
     // MARK: General 
 */
-h1 {
+h1,  h2 {
     font-family: "Amaranth", sans-serif;
     font-weight: 700;
     font-style: normal;
-    color: #DCD7C9;
+    color: var(--secondary-color);
     flex-wrap: wrap;
 }
 
@@ -26,11 +25,39 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
+    font-variation-settings: "wdth" 100;
+}
+
+section > div {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    gap: 0px 20px;
+}
+
+.section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.section-boxed {
+    width: 100%;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.section-boxed h2 {
+    color: var(--primary-color);
+}
+
+.section-boxed p {
+    margin-bottom: 0px;
 }
 
 .roundedImage {
@@ -39,73 +66,10 @@ body {
     float: left;
 }
 
-.box {
-    color: #2C3639;
-    background-color: #DCD7C9;
-    padding: 20px;
-    border-radius: 12px;
-}
 
-.imageCard {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-/* 
-    // MARK: Navbar 
-*/
-.navContainer {
-    background-color: var(--nav-color);
-    font-size: var(--font-size);
-}
-
-.navbar {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    width: var(--max-width);
-    margin: auto;
-    font-size: var(--font-size);
-    flex-direction: var(--nav-direction);
-}
-
-.navContainer .navbar {
-    justify-content: space-between;
-}
-
-.navContainer hr {
-    margin: 0;
-}
-
-.navbar ul {
-    display: flex;
-    gap: 10px;
-    padding: 0px;
-}
-
-.navbar ul li {
-    list-style-type: none;
-}
-
-.navbar a {
-    color: var(--secondary-color);
-    font-weight: bold;
-    padding: 4px;
-}
-
-.navbar a:hover {
-    color: var(--primary-color);
-    background-color: var(--secondary-color);
-    border-radius: 6px;
-}
 
 @media (max-width: 800px) {
     :root {
-        --font-size: 1rem;
         --max-width: 100%;
         --nav-direction: column;
     }
