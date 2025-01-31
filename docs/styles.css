@@ -4,19 +4,23 @@
 :root {
     --primary-color: #2C3639;
     --secondary-color: #DCD7C9;
-    --max-width: 80%;
-    --nav-direction: row;
+    --action-color: #FA774F;
+    --action-color-hover: #FA5F36;
+    --flex-direction: row;
 }
 
 /* 
     // MARK: General 
 */
-h1,  h2 {
+h1,  h2, h3, h4, h5, h6 {
     font-family: "Amaranth", sans-serif;
     font-weight: 700;
     font-style: normal;
-    color: var(--secondary-color);
     flex-wrap: wrap;
+}
+
+h1, h2 {
+    color: var(--secondary-color);
 }
 
 body {
@@ -35,10 +39,29 @@ section > div {
     justify-content: center;
 }
 
-.container {
-    gap: 0px 20px;
+/* 
+    MARK: Bootstrap Overrides 
+*/
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--action-color);
+    --bs-btn-border-color: var(--action-color);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--action-color-hover);
+    --bs-btn-hover-border-color: var(--action-color-hover);
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--action-color);
+    --bs-btn-active-border-color: var(--action-color);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: var(--action-color);
+    --bs-btn-disabled-border-color: var(--action-color);
 }
 
+/* 
+    MARK: Sections 
+*/
 .section {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -50,6 +73,8 @@ section > div {
     border-radius: 12px;
     background-color: var(--secondary-color);
     color: var(--primary-color);
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .section-boxed h2 {
@@ -66,11 +91,30 @@ section > div {
     float: left;
 }
 
+/* 
+    MARK: Projects 
+*/
+.projects {
+    display: flex;
+    flex-direction: var(--flex-direction);
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
 
+.project {
+    width: 300px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
 
+/* 
+    MARK: Responsiveness 
+*/
 @media (max-width: 800px) {
     :root {
-        --max-width: 100%;
         --nav-direction: column;
     }
 }
