@@ -39,6 +39,10 @@ section > div {
     justify-content: center;
 }
 
+p {
+    text-align: justify;
+}
+
 /* 
     MARK: Bootstrap Overrides 
 */
@@ -115,7 +119,6 @@ section > div {
     border-radius: 12px;
     background-color: var(--secondary-color);
     color: var(--primary-color);
-    text-align: justify;
 }
 
 .project img {
